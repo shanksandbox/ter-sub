@@ -1,0 +1,58 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+}
+
+h1, h2, span {
+    font-family: 'Josefine Sans', sans-serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+p, a, button {
+    font-family: 'Alata', sans-serif;
+}
+
+header {
+    height: 100vh;
+    
+    background-image: url('../images/mobile/image-hero.jpg');
+    background-size: cover;
+    background-position: center top;
+
+    display: grid;
+    align-items: start;
+
+    @include desktop-up {
+        background-image: url('../images/desktop/image-hero.jpg');
+    }
+
+    nav {
+        display: none;
+
+        @include desktop-up {
+            display: block;
+        }
+    }
+}
+
+footer {
+    background-color: $black;
+    color: #ffffff;
+    padding-top: 3.6rem;
+    padding-bottom: 3.5rem;
+    @include desktop-up {
+        padding-top: 2.8rem;
+        padding-bottom: 2.8rem;
+    }
+
+    nav {
+        @include desktop-up {
+            // grid item
+            order: 2;
+        }
+    }
+}

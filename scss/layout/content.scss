@@ -1,0 +1,208 @@
+// section 1
+.interactive {
+    width: 86%;
+    max-width: 1114px;
+    height: auto;
+    padding-top: 6.25rem;
+    padding-bottom: 3.25rem;
+    margin-left: auto;
+    margin-right: auto;
+    // flex container
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    @include desktop-up {
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        max-width: 731px;
+        display: block;
+        margin-bottom: 3rem;
+        opacity: 0;
+
+        @include tablet-portrait-up {
+            width: 80%;
+        }
+
+        @include desktop-up {
+            margin-right: auto;
+        }
+    }
+
+    &__content {
+        width: 90%;
+        max-width: 640px;
+        background-color: #fff;
+        opacity: 0;
+        
+        @include desktop-up {
+            padding: 6rem;
+            // position
+            position: absolute;
+            right: -100px;
+            top: 280px;
+        }
+
+        &-subtitle {
+            margin-top: 0;
+            margin-bottom: 13.5px;
+            // font
+            font-size: 2rem;
+            text-align: center;
+            line-height: 1.1;
+            @include desktop-up {
+                font-size: 3rem;
+                text-align: left;
+            }
+        }
+
+        &-paragraph {
+            margin-top: 0;
+            // font
+            color: $dark-gray;
+            text-align: center;
+            line-height: 1.7;
+            @include desktop-up {
+                text-align: left;
+            }
+        }
+    }
+}
+
+// section 2
+.creations {
+    margin-bottom: 4.1rem;
+    
+    &__wrapper {
+        width: 86%;
+        max-width: 1114px;
+        margin-left: auto;
+        margin-right: auto;
+        // grid container
+        display: grid;
+        @include desktop-up {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__subtitle {
+        // font
+        font-size: 2rem;
+        text-align: center;
+        // grid item
+        order: 1;
+        @include desktop-up {
+            justify-self: start;
+        }
+    }
+    &__button {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        // grid item
+        order: 3;
+        @include desktop-up {
+            order: 2;
+            // to align to the right
+            margin-right: 0;
+        }
+    }
+    &__gallery {
+        // grid container
+        display: grid;
+        row-gap: 1.6rem;
+        // grid item
+        order: 2;
+        @include tablet-landscape-up {
+            grid-template-columns: repeat(2, 1fr);
+            -moz-column-gap: 1.6rem;
+            column-gap: 1.6rem;
+        }
+        @include desktop-up {
+            // grid container
+            grid-template-columns: repeat(4, 1fr);
+            order: 3;
+            // grid item
+            grid-column: 1/-1;
+        }
+        @include big-desktop-up {
+            -moz-column-gap: 2rem;
+                 column-gap: 2rem;
+        }
+
+        &-item {
+            &:nth-child(1) {
+                background-image: url('../images/mobile/image-deep-earth.jpg');
+                background-size: cover;
+                background-position: center;
+                @include desktop-up {
+                    background-image: url('../images/desktop/image-deep-earth.jpg');
+                }
+            }
+            &:nth-child(2) {
+                background-image: url('../images/mobile/image-night-arcade.jpg');
+                background-size: cover;
+                background-position: center;
+                @include desktop-up {
+                    background-image: url('../images/desktop/image-night-arcade.jpg');
+                }
+            }
+            &:nth-child(3) {
+                background-image: url('../images/mobile/image-soccer-team.jpg');
+                background-size: cover;
+                background-position: center;
+                @include desktop-up {
+                    background-image: url('../images/desktop/image-soccer-team.jpg');
+                }
+            }
+            &:nth-child(4) {
+                background-image: url('../images/mobile/image-grid.jpg');
+                background-size: cover;
+                background-position: center;
+                @include desktop-up {
+                    background-image: url('../images/desktop/image-grid.jpg');
+                }
+            }
+            &:nth-child(5) {
+                background-image: url('../images/mobile/image-from-above.jpg');
+                background-size: cover;
+                background-position: center;
+                @include desktop-up {
+                    background-image: url('../images/desktop/image-from-above.jpg');
+                }
+            }
+            &:nth-child(6) {
+                background-image: url('../images/mobile/image-pocket-borealis.jpg');
+                background-size: cover;
+                background-position: center;
+                @include desktop-up {
+                    background-image: url('../images/desktop/image-pocket-borealis.jpg');
+                }
+            }
+            &:nth-child(7) {
+                background-image: url('../images/mobile/image-curiosity.jpg');
+                background-size: cover;
+                background-position: center;
+                @include desktop-up {
+                    background-image: url('../images/desktop/image-curiosity.jpg');
+                }
+            }
+            &:nth-child(8) {
+                background-image: url('../images/mobile/image-fisheye.jpg');
+                background-size: cover;
+                background-position: center;
+                @include desktop-up {
+                    background-image: url('../images/desktop/image-fisheye.jpg');
+                }
+            }
+        }
+    }
+}
